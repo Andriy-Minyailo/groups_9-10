@@ -20,32 +20,72 @@
 // вырезать foo,
 // перевести его в строку разделенную пробелами
 
-const arr = ["BEST", "the", "foo", "is", "JS"];
+// const arr = ["BEST", "the", "foo", "is", "JS"];
 
-const cutValue = function (array, value) {
-  let newArray = [...array];
+// const cutValue = function (array, value) {
+//   let newArray = [...array];
 
-  let reversArray = newArray.reverse();
+//   let reversArray = newArray.reverse();
 
-  let indexValue = reversArray.indexOf(value);
+//   let indexValue = reversArray.indexOf(value);
 
-  let cutValueArray = reversArray.splice(indexValue, 1);
+//   let cutValueArray = reversArray.splice(indexValue, 1);
 
-  let finalResult = reversArray.join(" ");
+//   let finalResult = reversArray.join(" ");
 
-  console.log(cutValueArray);
+//   console.log(cutValueArray);
 
-  console.log(finalResult);
-};
+//   console.log(finalResult);
+// };
 
-cutValue(arr, "foo");
+// cutValue(arr, "foo");
 
-const cutValue2 = function (array, value) {
-  return array
-    .reverse()
-    .slice(0, array.indexOf(value))
-    .concat(array.slice(array.indexOf(value) + 1))
-    .join(" ");
-};
+// const cutValue2 = function (array, value) {
+//   return array
+//     .reverse()
+//     .slice(0, array.indexOf(value))
+//     .concat(array.slice(array.indexOf(value) + 1))
+//     .join(" ");
+// };
 
-console.log(cutValue2(arr, "foo"));
+// console.log(cutValue2(arr, "foo"));
+
+// *?  За каждый месяц налоговая начисляет на зп разработчика 5% от суммы.
+
+// *?  Напишите консольную функцию, для которую пользователь вводит сумму зп
+
+// *?  и количество месяцев с помощью prompt() не забываем что prompt возвращает строку.
+
+// *?  А налоговая вычисляет конечную сумму зп без налогов за год,
+
+// *?  сумму налогов всего и чистый доход разработчика за каждый месяц.
+
+// *?  Для вычисления суммы с учетом процентов используйте цикл for.
+
+function taxCounter() {
+  let devSalary = Number(prompt('Enter your salary par month'));
+  // if (isNaN(devSalary)) {
+  //   alert('Invalid salary');
+  //   taxCounter();
+  // }
+
+  
+  let devMonthes = Number(prompt('Enter quantity of months'));
+  if ((isNaN(devMonthes)) || (isNaN(devSalary))) {
+    alert('Invalid info');
+    taxCounter();
+  } 
+
+  let clearSalary = 0;
+  let totalTax = 0;
+  const tax = 0.05;
+
+  for (let i = 1; i <= devMonthes; i += 1) {
+    clearSalary += devSalary - devSalary * tax;
+    totalTax += devSalary * tax;
+  }
+  console.log(`Your clear salary: ${clearSalary}, total tax: ${totalTax}`);
+
+  
+}
+taxCounter()
