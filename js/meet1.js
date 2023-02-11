@@ -62,30 +62,39 @@
 
 // *?  Для вычисления суммы с учетом процентов используйте цикл for.
 
-function taxCounter() {
-  let devSalary = Number(prompt('Enter your salary par month'));
-  // if (isNaN(devSalary)) {
-  //   alert('Invalid salary');
-  //   taxCounter();
-  // }
+// function taxCounter() {
+//   let devSalary = Number(prompt('Enter your salary par month'));
+//   // if (isNaN(devSalary)) {
+//   //   alert('Invalid salary');
+//   //   taxCounter();
+//   // }
 
-  
-  let devMonthes = Number(prompt('Enter quantity of months'));
-  if ((isNaN(devMonthes)) || (isNaN(devSalary))) {
-    alert('Invalid info');
-    taxCounter();
-  } 
+//   let devMonthes = Number(prompt('Enter quantity of months'));
+//   if ((isNaN(devMonthes)) || (isNaN(devSalary))) {
+//     alert('Invalid info');
+//     taxCounter();
+//   }
 
-  let clearSalary = 0;
-  let totalTax = 0;
-  const tax = 0.05;
+//   let clearSalary = 0;
+//   let totalTax = 0;
+//   const tax = 0.05;
 
-  for (let i = 1; i <= devMonthes; i += 1) {
-    clearSalary += devSalary - devSalary * tax;
-    totalTax += devSalary * tax;
-  }
-  console.log(`Your clear salary: ${clearSalary}, total tax: ${totalTax}`);
+//   for (let i = 1; i <= devMonthes; i += 1) {
+//     clearSalary += devSalary - devSalary * tax;
+//     totalTax += devSalary * tax;
+//   }
+//   console.log(`Your clear salary: ${clearSalary}, total tax: ${totalTax}`);
 
-  
-}
-taxCounter()
+// }
+// taxCounter()
+
+//додайте "Маракуя" в кінець
+// замініть значення "Борщ" на "Роли"
+// видаліть перший елемент масиву та виведіть його в консоль
+// додайте "Вассабі" та "Угорь" на початок масиву
+const menu = ["Суші", "Борщ"];
+menu.push("Маракуя");
+menu.splice(1, 1, "Роли");
+console.log(menu.shift());
+menu.unshift("Вассабі", "Угорь");
+console.log(menu);
