@@ -92,9 +92,53 @@
 // замініть значення "Борщ" на "Роли"
 // видаліть перший елемент масиву та виведіть його в консоль
 // додайте "Вассабі" та "Угорь" на початок масиву
-const menu = ["Суші", "Борщ"];
-menu.push("Маракуя");
-menu.splice(1, 1, "Роли");
-console.log(menu.shift());
-menu.unshift("Вассабі", "Угорь");
-console.log(menu);
+// const menu = ["Суші", "Борщ"];
+// menu.push("Маракуя");
+// menu.splice(1, 1, "Роли");
+// console.log(menu.shift());
+// menu.unshift("Вассабі", "Угорь");
+// console.log(menu);
+
+//Напишіть функцію яка перевіряє 2 рядки чи являються вони анаграмою
+
+// Напишіть функцію для нормалізації дати
+
+const inputData = [
+    { id: 1, name: "Item 1" },
+    { id: 2, name: "Item 2" },
+    { id: 4, name: "Item 4" },
+    { id: 7, name: "Item 7" },
+];
+
+function normalizeData(data) {
+  const arrayId = [];
+  const objectData = {};
+  const resaltObj = {};
+
+  data.forEach(function(item) {
+    let itemId = item.id;
+    console.log(itemId);
+    arrayId.push(itemId);
+    console.log(arrayId);
+    objectData[itemId] = item;
+
+  });
+
+
+  resaltObj.entities = objectData;
+  resaltObj.byId = arrayId;
+
+  return resaltObj;  
+};
+console.log(normalizeData(inputData));
+
+// ('function should return normalized data', () => {
+//     expect(normalize(inputData)).toEqual({
+//       entities: {
+//         1: { id: 1, name: "Item 1" },
+//         2: { id: 2, name: "Item 2" },
+//         4: { id: 4, name: "Item 4" },
+//         7: { id: 7, name: "Item 7" },
+//       },
+//       byId: [1, 2, 4, 7],
+//     });
