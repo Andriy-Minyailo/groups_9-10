@@ -103,34 +103,34 @@
 
 // Напишіть функцію для нормалізації дати
 
-const inputData = [
-    { id: 1, name: "Item 1" },
-    { id: 2, name: "Item 2" },
-    { id: 4, name: "Item 4" },
-    { id: 7, name: "Item 7" },
-];
+// const inputData = [
+//     { id: 1, name: "Item 1" },
+//     { id: 2, name: "Item 2" },
+//     { id: 4, name: "Item 4" },
+//     { id: 7, name: "Item 7" },
+// ];
 
-function normalizeData(data) {
-  const arrayId = [];
-  const objectData = {};
-  const resaltObj = {};
+// function normalizeData(data) {
+//   const arrayId = [];
+//   const objectData = {};
+//   const resaltObj = {};
 
-  data.forEach(function(item) {
-    let itemId = item.id;
-    console.log(itemId);
-    arrayId.push(itemId);
-    console.log(arrayId);
-    objectData[itemId] = item;
+//   data.forEach(function(item) {
+//     let itemId = item.id;
+//     console.log(itemId);
+//     arrayId.push(itemId);
+//     console.log(arrayId);
+//     objectData[itemId] = item;
 
-  });
+//   });
 
 
-  resaltObj.entities = objectData;
-  resaltObj.byId = arrayId;
+//   resaltObj.entities = objectData;
+//   resaltObj.byId = arrayId;
 
-  return resaltObj;  
-};
-console.log(normalizeData(inputData));
+//   return resaltObj;
+// };
+// console.log(normalizeData(inputData));
 
 // ('function should return normalized data', () => {
 //     expect(normalize(inputData)).toEqual({
@@ -142,3 +142,5 @@ console.log(normalizeData(inputData));
 //       },
 //       byId: [1, 2, 4, 7],
 //     });
+
+
